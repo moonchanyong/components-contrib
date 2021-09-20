@@ -5,15 +5,19 @@
 
 package state
 
+import (
+	"github.com/dapr/components-contrib/common"
+)
+
 // Store is an interface to perform operations on store
 type Store interface {
+	common.Pinger
 	BulkStore
 	Init(metadata Metadata) error
 	Features() []Feature
 	Delete(req *DeleteRequest) error
 	Get(req *GetRequest) (*GetResponse, error)
 	Set(req *SetRequest) error
-	Ping() error
 }
 
 // BulkStore is an interface to perform bulk operations on store
