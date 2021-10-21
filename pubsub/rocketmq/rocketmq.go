@@ -363,6 +363,10 @@ func (r *rocketMQ) validMqTypeParams(mqType string) bool {
 	return true
 }
 
+func (r *rocketMQ) Ping() error {
+	return nil
+}
+
 func (r *rocketMQ) Close() error {
 	r.producerLock.Lock()
 	defer r.producerLock.Unlock()

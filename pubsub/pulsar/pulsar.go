@@ -362,3 +362,7 @@ func formatDuration(durationString string) (time.Duration, error) {
 
 	return d, err
 }
+
+func (p *Pulsar) Ping() error {
+	return nil
+}
